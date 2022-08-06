@@ -4,12 +4,12 @@ const cors = require("cors");
 const path = require("path");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 let mobileno;
 let messagecontent;
-app.post("/api", (req, res) => {
+app.post("/", (req, res) => {
   	const { phone, msg } = req.body;
   	mobileno = phone;
 	messagecontent = msg;
